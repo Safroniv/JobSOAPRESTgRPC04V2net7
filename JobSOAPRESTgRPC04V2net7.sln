@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicService.Data", "Clini
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicClient", "ClinicClient\ClinicClient.csproj", "{4841B3C4-E0FE-4FFD-AF0E-45AD842DA586}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicServiceV2", "ClinicServiceV2\ClinicServiceV2.csproj", "{974ABBE5-E437-4D9C-A031-882ACAA342F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4841B3C4-E0FE-4FFD-AF0E-45AD842DA586}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4841B3C4-E0FE-4FFD-AF0E-45AD842DA586}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4841B3C4-E0FE-4FFD-AF0E-45AD842DA586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{974ABBE5-E437-4D9C-A031-882ACAA342F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{974ABBE5-E437-4D9C-A031-882ACAA342F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{974ABBE5-E437-4D9C-A031-882ACAA342F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{974ABBE5-E437-4D9C-A031-882ACAA342F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
