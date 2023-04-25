@@ -6,7 +6,13 @@ option csharp_namespace = "ClinicServiceNamespace";
 
 import "google/protobuf/wrappers.proto";
 
+
 //https://learn.microsoft.com/ru-ru/aspnet/core/grpc/json-transcoding?view=aspnetcore-7.0
+//https://github.com/dotnet/aspnetcore/blob/main/src/Grpc/JsonTranscoding/test/testassets/Sandbox/google/api/http.proto
+
+import "google/api/annotations.proto";
+
+package proto;
 
 //Сервис клиники
 service ClinicService{
@@ -15,12 +21,26 @@ service ClinicService{
 	rpc CreateClinet (CreateClientRequest) returns (CreateClientResponse);
 	// Обновление клиента
     rpc UpdateClient (UpdateClientRequest) returns (UpdateClientResponse);
-    // Удаление клиента
+    // Удаление клиента 
 	rpc DeleteClient (DeleteClientRequest) returns (DeleteClientResponse);
     //Получение клиента по идентификатору
 	rpc GetClientById (GetClientByIdRequest) returns (ClientResponse);
+
+    /*{
+        option (google.api.http) = {
+            post: "/api/clientById"
+            body: "*",
+            response_body: "client"
+        };
+    };*/
+
+
     //Получить список клиентов
-	rpc GetClients (GetClientsRequest) returns (GetClientsResponse);
+	rpc GetClients (GetClientsRequest) returns (GetClientsResponse){
+        option (google.api.http) = {
+            get: "/api/clients"
+        };
+    };
 }
 
 //Параметры запроса на создание клиента

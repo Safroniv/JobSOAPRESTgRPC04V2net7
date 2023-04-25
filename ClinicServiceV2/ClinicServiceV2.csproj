@@ -31,4 +31,8 @@
     <Protobuf Include="Protos\clinic.proto" GrpcServices="Server" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="google\api\" />
+  </ItemGroup>
+
 </Project>

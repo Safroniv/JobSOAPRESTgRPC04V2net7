@@ -11,7 +11,7 @@ namespace ClinicClient
             AppContext.SetSwitch(
                 "System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
 
-            using var channel = GrpcChannel.ForAddress("http://localhost:5888");
+            using var channel = GrpcChannel.ForAddress("http://localhost:5001");
             ClinicServiceClient clinicServiceClient = new ClinicServiceClient(channel);
 
             var createClientResponse = clinicServiceClient.CreateClinet(new CreateClientRequest

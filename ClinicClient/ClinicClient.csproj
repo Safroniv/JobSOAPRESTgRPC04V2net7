@@ -16,15 +16,12 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Proto\" />
-    <Folder Include="Proto\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="Protos\" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Protobuf Include="..\ClinicService\Proto\clinic.proto" GrpcServices="Client">
-      <Link>Proto\clinic.proto</Link>
-    </Protobuf>
-  </ItemGroup>
+	<ItemGroup>
+		<Protobuf Include="..\ClinicService\Protos\clinic.proto" Link="Protos\clinic.proto" GrpcServices="Client" />
+	</ItemGroup>
 
 </Project>
