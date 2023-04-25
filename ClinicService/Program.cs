@@ -15,7 +15,7 @@ namespace ClinicService
 
             builder.WebHost.ConfigureKestrel(options =>
             {
-                options.Listen(IPAddress.Any, 5888, listenOptions =>
+                options.Listen(IPAddress.Any, 5001, listenOptions =>
                 {
                     listenOptions.Protocols = HttpProtocols.Http2;
                 });
@@ -23,7 +23,7 @@ namespace ClinicService
 
             builder.Services.AddGrpc();
 
-            #region Configure EF DBContext Service (CardStorageService Database)
+            #region Configure EF DBContext Service (Database)
 
             builder.Services.AddDbContext<ClinicServiceDbContext>(options =>
             {
@@ -48,6 +48,13 @@ namespace ClinicService
 
             app.UseAuthorization();
 
+            app.UseWhen( 
+                ctx => ctx.Request.ContentType != "application/grpc",
+                builder =>
+                {
+                    builder.UseHttpLogging();
+                }
+                );
 
             app.MapControllers();
 
